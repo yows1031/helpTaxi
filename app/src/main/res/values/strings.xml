@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">helpTaxi</string>
+    <string name="destination">行き先</string>
+    <string name="detail">説明</string>
+    <string name="next">TODO</string>
+    <string name="destination">行き先</string>
+    <string name="detail">説明</string>
 </resources>
