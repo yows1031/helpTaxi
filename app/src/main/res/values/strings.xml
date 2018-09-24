@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">helpTaxi</string>
-    <string name="destination">行き先</string>
-    <string name="detail">説明</string>
+    <string name="までお願いします">までお願いします。</string>
     <string name="next">TODO</string>
-    <string name="destination">行き先</string>
-    <string name="detail">説明</string>
+    <string name="行き先">行き先</string>
+    <string name="説明">説明</string>
+    <string name="を説明しますと">を説明しますと</string>
+    <string name="googlemap">TODO</string>
+    <string name="行き先は">行き先は</string>
 </resources>

@@ -22,7 +22,7 @@
         android:layout_height="70dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="112dp"
-        android:text="を説明しますと"
+        android:text="@string/を説明しますと"
         android:textSize="24pt"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -41,11 +41,16 @@
         app:layout_constraintVertical_bias="1.0"/>
 
     <ImageButton
-        android:id="@+id/gMap"
+        android:id="@+id/gmap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
+        android:contentDescription="@string/googlemap"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.982"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/googleMapIcon"
-        tools:layout_editor_absoluteX="440dp"/>
+        app:srcCompat="@drawable/gmapicon"/>
 </android.support.constraint.ConstraintLayout>
