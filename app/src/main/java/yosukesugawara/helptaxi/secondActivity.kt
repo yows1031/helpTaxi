@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_second.*
 
 class secondActivity : AppCompatActivity() {
 
@@ -14,13 +15,10 @@ class secondActivity : AppCompatActivity() {
         setContentView(R.layout.activity_second)
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
-        var des1 = findViewById<TextView>(R.id.des1)
-        var go = findViewById<ImageButton>(R.id.go)
-        var back = findViewById<ImageButton>(R.id.back)
 
-        var destination = intent.getStringArrayExtra("desti")
+        var destination = intent.getStringExtra("desti")
 
-        des1.text(destination)
+        des1.text = destination.toString()
 
         go.setOnClickListener {
             var thirdGo = Intent(this, thirdActivity::class.java)
