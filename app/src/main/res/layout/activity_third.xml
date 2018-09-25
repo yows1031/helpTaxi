@@ -8,7 +8,7 @@
     tools:context=".thirdActivity">
 
     <TextView
-        android:id="@+id/dep2"
+        android:id="@+id/des2"
         android:layout_width="270dp"
         android:layout_height="70dp"
         android:layout_marginStart="16dp"
@@ -28,7 +28,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
-        android:id="@+id/rec2"
+        android:id="@+id/det1"
         android:layout_width="500dp"
         android:layout_height="140dp"
         android:layout_marginBottom="16dp"
@@ -42,15 +42,28 @@
 
     <ImageButton
         android:id="@+id/gmap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="53dp"
+        android:layout_height="50dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="424dp"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/googlemap"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.982"
+        app:layout_constraintEnd_toStartOf="@+id/menu"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gmapicon"/>
+
+    <ImageButton
+        android:id="@+id/menu"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/menu"
+        android:contentDescription="@string/menu"/>
 </android.support.constraint.ConstraintLayout>

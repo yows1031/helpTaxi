@@ -9,21 +9,27 @@ import android.widget.TextView
 
 class secondActivity : AppCompatActivity() {
 
-    var des1 = findViewById<TextView>(R.id.des1)
-    var go = findViewById<ImageButton>(R.id.go)
-
-    var destination = intent.getStringArrayExtra("desti")
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
-        des1.text = destination.toString()
+        var des1 = findViewById<TextView>(R.id.des1)
+        var go = findViewById<ImageButton>(R.id.go)
+        var back = findViewById<ImageButton>(R.id.back)
+
+        var destination = intent.getStringArrayExtra("desti")
+
+        des1.text(destination)
 
         go.setOnClickListener {
-            val thirdgo = Intent(this, thirdActivity::class.java)
-            startActivity(thirdgo)
+            var thirdGo = Intent(this, thirdActivity::class.java)
+            startActivity(thirdGo)
+        }
+
+        back.setOnClickListener {
+            var mainBack = Intent(this, MainActivity::class.java)
+            startActivity(mainBack)
         }
 
 

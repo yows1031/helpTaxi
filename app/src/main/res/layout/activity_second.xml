@@ -21,8 +21,8 @@
         android:id="@+id/des1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="110dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="108dp"
         android:textSize="48pt"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -49,4 +49,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/go"
         android:contentDescription="@string/next"/>
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="50dp"
+        android:layout_height="150dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="116dp"
+        app:layout_constraintEnd_toStartOf="@+id/go"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back"
+        android:contentDescription="@string/back"/>
 </android.support.constraint.ConstraintLayout>

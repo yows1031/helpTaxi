@@ -9,13 +9,13 @@ import android.widget.ImageButton
 
 class MainActivity : AppCompatActivity() {
 
-    val des = findViewById<EditText>(R.id.des)
-    val det = findViewById<EditText>(R.id.det)
-    val go = findViewById<ImageButton>(R.id.go)
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val des = findViewById<EditText>(R.id.des)
+        val det = findViewById<EditText>(R.id.det)
+        val go = findViewById<ImageButton>(R.id.go)
 
 
         go.setOnClickListener {
