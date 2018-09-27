@@ -19,11 +19,11 @@
 
     <TextView
         android:id="@+id/des1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="108dp"
-        android:textSize="48pt"
+        android:layout_width="400dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="104dp"
+        android:textSize="36pt"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 

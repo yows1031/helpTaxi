@@ -10,18 +10,19 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    companion object {
+        const val DEST_TEXT = "yosukesugawara.helptaxi.TEXTDATA"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
 
         go.setOnClickListener {
-            val destination = des.text.toString()
-            val detail = det.text.toString()
-
             val goSecond = Intent(this, secondActivity::class.java)
-            intent.putExtra("desti",destination)
-            intent.putExtra("detai",detail)
+            goSecond.putExtra(DEST_TEXT, des.text.toString())
+
             startActivity(goSecond)
 
         }

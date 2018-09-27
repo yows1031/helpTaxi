@@ -13,14 +13,14 @@ class thirdActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_third)
-        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
 
 
         var destination = intent.getStringExtra("desti")
         var detail = intent.getStringExtra("detai")
 
-        des2.text = destination.toString()
-        det1.text = detail.toString()
+        des2.text = destination
+        det1.text = detail
 
         menu.setOnClickListener {
             var menuBack = Intent(this, MainActivity::class.java)

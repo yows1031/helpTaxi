@@ -13,12 +13,12 @@ class secondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
-        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
 
 
-        var destination = intent.getStringExtra("desti")
+        val text = intent.getStringExtra(MainActivity.DEST_TEXT)
 
-        des1.text = destination.toString()
+        des1.setText(text)
 
         go.setOnClickListener {
             var thirdGo = Intent(this, thirdActivity::class.java)
