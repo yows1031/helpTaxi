@@ -23,7 +23,7 @@
         android:layout_height="150dp"
         android:layout_marginStart="96dp"
         android:layout_marginTop="104dp"
-        android:textSize="36pt"
+        android:textSize="28pt"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
@@ -40,7 +40,7 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <ImageButton
-        android:id="@+id/go"
+        android:id="@+id/next"
         android:layout_width="50dp"
         android:layout_height="150dp"
         android:layout_marginEnd="16dp"
@@ -57,7 +57,6 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="116dp"
-        app:layout_constraintEnd_toStartOf="@+id/go"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

@@ -15,12 +15,11 @@ class thirdActivity : AppCompatActivity() {
         setContentView(R.layout.activity_third)
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
 
+        val dest2 = intent.getStringExtra(secondActivity.DEST_TEXT)
+        val deta2 = intent.getStringExtra(secondActivity.DETA_TEXT)
 
-        var destination = intent.getStringExtra("desti")
-        var detail = intent.getStringExtra("detai")
-
-        des2.text = destination
-        det1.text = detail
+        des2.setText(dest2)
+        det1.setText(deta2)
 
         menu.setOnClickListener {
             var menuBack = Intent(this, MainActivity::class.java)

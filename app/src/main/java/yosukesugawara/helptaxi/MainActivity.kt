@@ -12,18 +12,19 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         const val DEST_TEXT = "yosukesugawara.helptaxi.TEXTDATA"
+        const val DETA_TEXT = "yosukesugawara.helptaxi.TEXTDATA1"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        next.setOnClickListener {
+            val goNext = Intent(this, secondActivity::class.java)
+            goNext.putExtra(DEST_TEXT, des.text.toString())
+            goNext.putExtra(DETA_TEXT, det.text.toString())
+            startActivity(goNext)
 
-        go.setOnClickListener {
-            val goSecond = Intent(this, secondActivity::class.java)
-            goSecond.putExtra(DEST_TEXT, des.text.toString())
-
-            startActivity(goSecond)
 
         }
     }

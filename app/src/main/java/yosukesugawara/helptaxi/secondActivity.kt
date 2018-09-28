@@ -10,23 +10,31 @@ import kotlinx.android.synthetic.main.activity_second.*
 
 class secondActivity : AppCompatActivity() {
 
+    companion object {
+        const val DEST_TEXT = "yosukesugawara.helptaxi.TEXTDATA"
+        const val DETA_TEXT = "yosukesugawara.helptaxi.TEXTDATA1"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
 
 
-        val text = intent.getStringExtra(MainActivity.DEST_TEXT)
+        val dest1 = intent.getStringExtra(MainActivity.DEST_TEXT)
+        val deta1 = intent.getStringExtra(MainActivity.DETA_TEXT)
 
-        des1.setText(text)
+        des1.setText(dest1)
 
-        go.setOnClickListener {
-            var thirdGo = Intent(this, thirdActivity::class.java)
-            startActivity(thirdGo)
+        next.setOnClickListener {
+            val goNextThird = Intent(this, thirdActivity::class.java)
+            goNextThird.putExtra(DEST_TEXT, dest1)
+            goNextThird.putExtra(DETA_TEXT, deta1)
+            startActivity(goNextThird)
         }
 
         back.setOnClickListener {
-            var mainBack = Intent(this, MainActivity::class.java)
+            val mainBack = Intent(this, MainActivity::class.java)
             startActivity(mainBack)
         }
 
