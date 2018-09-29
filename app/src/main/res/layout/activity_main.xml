@@ -49,11 +49,12 @@
         android:contentDescription="@string/next"/>
 
     <android.support.v7.widget.RecyclerView
-        android:layout_width="368dp"
-        android:layout_height="275dp"
-        android:layout_marginTop="292dp"
+        android:id="@+id/list_item"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/det"/>
 
 </android.support.constraint.ConstraintLayout>
