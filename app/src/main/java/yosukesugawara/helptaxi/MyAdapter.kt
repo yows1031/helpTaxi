@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 
-class MyAdapter(private val context: Context, private val myDataset: Array<String>): RecyclerView.Adapter<MyAdapter.ViewHolder>()  {
+class MyAdapter(private val context: Context, private val myDataset: ArrayList<String>): RecyclerView.Adapter<MyAdapter.ViewHolder>()  {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(context)
@@ -17,7 +17,6 @@ class MyAdapter(private val context: Context, private val myDataset: Array<Strin
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-//        holder?.mTextView?.text = myDataset[position]
         holder?.let {
             it.list_des?.text = myDataset[position]
             it.list_det?.text = myDataset[position]
@@ -26,7 +25,6 @@ class MyAdapter(private val context: Context, private val myDataset: Array<Strin
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
 
-//        var mTextView: TextView? = itemView.findViewById(R.id.list_item) as? TextView
         var list_des: TextView? = itemView.findViewById(R.id.list_des) as? TextView
         var list_det: TextView? = itemView.findViewById(R.id.list_det) as? TextView
 
