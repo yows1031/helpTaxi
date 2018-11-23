@@ -54,10 +54,6 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-//        test.setOnClickListener {
-//            onClick()
-//        }
-
         listArrayList = loadArrayList(prefKey)
         list_item.adapter = MyAdapter(this, listArrayList)
         list_item.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
@@ -71,14 +67,9 @@ class MainActivity : AppCompatActivity() {
     fun onClick(){
 
         val msgData : String = des.text.toString()
-//        val e : SharedPreferences.Editor = prefs.edit()
-//        e.putString(prefKey , msgData)
-//        e.apply()
+
 
         listArrayList.add(msgData)
-//        listArrayList.MyAdapter.clear();
-//        MyAdapter.addAll(listArrayList);
-
         saveArrayList(prefKey, listArrayList)
 
         list_item.adapter.notifyDataSetChanged()

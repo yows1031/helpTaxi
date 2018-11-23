@@ -26,14 +26,14 @@ class secondActivity : AppCompatActivity() {
 
         des1.setText(dest1)
 
-        next.setOnClickListener {
+        next2.setOnClickListener {
             val goNextThird = Intent(this, thirdActivity::class.java)
             goNextThird.putExtra(DEST_TEXT, dest1)
             goNextThird.putExtra(DETA_TEXT, deta1)
             startActivity(goNextThird)
         }
 
-        back.setOnClickListener {
+        back1.setOnClickListener {
             val mainBack = Intent(this, MainActivity::class.java)
             startActivity(mainBack)
         }
