@@ -14,15 +14,16 @@ import org.json.JSONArray
 class MainActivity : AppCompatActivity() {
 
 
-     val prefKey = "prefKey"
+    val prefKey = "prefKey"
+    val prefKey2 = "prefKey2"
 
     companion object {
         const val DEST_TEXT = "yosukesugawara.helptaxi.TEXTDATA"
         const val DETA_TEXT = "yosukesugawara.helptaxi.TEXTDATA1"
     }
 
-//    val listArrayList = arrayListOf<String>("A", "B")
     var listArrayList =  ArrayList<String>()
+    var listArrayList2 = ArrayList<String>()
 
     lateinit var prefs : SharedPreferences
 
@@ -30,11 +31,14 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
 
         listArrayList = loadArrayList(prefKey)
+        listArrayList2 = loadArrayList(prefKey2)
 
         prefs = getSharedPreferences(prefKey, AppCompatActivity.MODE_PRIVATE)
+        prefs = getSharedPreferences(prefKey2, AppCompatActivity.MODE_PRIVATE)
 //        val memo : String = prefs.getString(prefKey, "")
 //        des.setText(memo)
         des.setText(listArrayList.toString())
+        det.setText(listArrayList2.toString())
 
     }
 
@@ -55,10 +59,10 @@ class MainActivity : AppCompatActivity() {
         }
 
         listArrayList = loadArrayList(prefKey)
+        listArrayList2 = loadArrayList(prefKey2)
         list_item.adapter = MyAdapter(this, listArrayList)
+        list_item.adapter = MyAdapter(this, listArrayList2)
         list_item.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-
-
 
 
 
@@ -67,10 +71,12 @@ class MainActivity : AppCompatActivity() {
     fun onClick(){
 
         val msgData : String = des.text.toString()
-
+        val msgData2 : String = det.text.toString()
 
         listArrayList.add(msgData)
+        listArrayList2.add(msgData2)
         saveArrayList(prefKey, listArrayList)
+        saveArrayList(prefKey2, listArrayList2)
 
         list_item.adapter.notifyDataSetChanged()
 
@@ -100,6 +106,7 @@ class MainActivity : AppCompatActivity() {
 
         for (i in 0 until jsonArray.length()) {
             listArrayList.add(jsonArray.get(i) as String)
+            listArrayList2.add(jsonArray.get(i) as String)
         }
 
         return listArrayList
