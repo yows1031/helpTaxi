@@ -24,7 +24,7 @@ class secondActivity : AppCompatActivity() {
         val dest1 = intent.getStringExtra(MainActivity.DEST_TEXT)
         val deta1 = intent.getStringExtra(MainActivity.DETA_TEXT)
 
-        des1.setText(dest1)
+        des1.text = dest1
 
         next2.setOnClickListener {
             val goNextThird = Intent(this, thirdActivity::class.java)

@@ -6,8 +6,6 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
-import android.view.View
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONArray
 
@@ -25,20 +23,21 @@ class MainActivity : AppCompatActivity() {
     var listArrayList =  ArrayList<String>()
     var listArrayList2 = ArrayList<String>()
 
-    lateinit var prefs : SharedPreferences
+    //lateinit var prefs : SharedPreferences
 
     override fun onResume() {
         super.onResume()
 
         listArrayList = loadArrayList(prefKey)
+        Log.d("List1", listArrayList.joinToString())
         listArrayList2 = loadArrayList(prefKey2)
+        Log.d("List2", listArrayList2.joinToString())
+        list_item.adapter = MyAdapter(this, listArrayList, listArrayList2)
 
-        prefs = getSharedPreferences(prefKey, AppCompatActivity.MODE_PRIVATE)
-        prefs = getSharedPreferences(prefKey2, AppCompatActivity.MODE_PRIVATE)
-//        val memo : String = prefs.getString(prefKey, "")
-//        des.setText(memo)
-        des.setText(listArrayList.toString())
-        det.setText(listArrayList2.toString())
+        list_item.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+
+        des.setText(listArrayList.joinToString())
+        det.setText(listArrayList2.joinToString())
 
     }
 
@@ -57,24 +56,18 @@ class MainActivity : AppCompatActivity() {
 
 
         }
-
-        listArrayList = loadArrayList(prefKey)
-        listArrayList2 = loadArrayList(prefKey2)
-        list_item.adapter = MyAdapter(this, listArrayList)
-        list_item.adapter = MyAdapter(this, listArrayList2)
-        list_item.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-
-
-
     }
 
     fun onClick(){
+        Log.d(localClassName, "onClick")
 
         val msgData : String = des.text.toString()
         val msgData2 : String = det.text.toString()
 
         listArrayList.add(msgData)
+        Log.d("List1", listArrayList.joinToString())
         listArrayList2.add(msgData2)
+        Log.d("List2", listArrayList2.joinToString())
         saveArrayList(prefKey, listArrayList)
         saveArrayList(prefKey2, listArrayList2)
 
@@ -92,6 +85,7 @@ class MainActivity : AppCompatActivity() {
         val jsonArray = JSONArray(listArrayList)
         shardPrefEditor.putString(key, jsonArray.toString())
         shardPrefEditor.apply()
+        Log.d("Save", listArrayList.joinToString())
     }
 
     // リストの読み込み
@@ -100,16 +94,18 @@ class MainActivity : AppCompatActivity() {
 
         val shardPreferences = this.getPreferences(AppCompatActivity.MODE_PRIVATE)
 
-        val jsonArray = JSONArray(shardPreferences.getString(key, "[]"));
+
+        val jsonArray = JSONArray(shardPreferences.getString(key, "[]"))
 
         val arrayList : ArrayList<String> = ArrayList()
 
         for (i in 0 until jsonArray.length()) {
-            listArrayList.add(jsonArray.get(i) as String)
-            listArrayList2.add(jsonArray.get(i) as String)
+            arrayList.add(jsonArray.get(i) as String)
         }
 
-        return listArrayList
+        Log.d("Load", arrayList.joinToString())
+
+        return arrayList
     }
 //    override fun onItemClick(view: View, position: Int) {
 //        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
